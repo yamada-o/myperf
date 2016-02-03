@@ -85,6 +85,8 @@ func main() {
 	}
 	if nopool == false {
 		db.SetMaxIdleConns(concurrency)
+	} else {
+		db.SetMaxIdleConns(0)
 	}
 	run(concurrency, duration, query)
 }
